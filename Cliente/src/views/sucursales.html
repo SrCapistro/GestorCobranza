@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script type="text/javascript" src="../js/sucursales.js"></script>
+        <title>Panel principal - deudores</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="main.html" style="font-size: 25px;">Gestor de cobranza</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="deudores.html">Deudores<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="sucursales.html">Sucursales</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cobradores.html">Cobradores</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-outline-success my-2 my-sm-0" href="../index.html">Cerrar sesión</a>              
+              </form>
+            </div>
+          </nav>
+          <div class="data-section">
+            <table id="tablasucursales" class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Nombre sucursal</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Colonia</th>
+                    <th scope="col">Detalles</th>
+                  </tr>
+                </thead>
+              </table>
+          </div>
+          <button type="button" style="float: left; margin-left: 10px;" class="btn btn-success" onclick="abrirRegistro()">Registrar sucursal</button>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        
+        <meta charset="utf-8">
+        
+        <title>Iniciar sesión</title>    
+        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style type="text/css"></style>
+        <script type="text/javascript" src="js/index.js"></script>
+        <style>
+            .login-form {
+                width: 340px;
+                margin: 50px auto;
+            }
+            .login-form form {
+                margin-bottom: 15px;
+                background: #f7f7f7;
+                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+                padding: 30px;
+            }
+            .login-form h2 {
+                margin: 0 0 15px;
+            }
+            .form-control, .btn {
+                min-height: 38px;
+                border-radius: 2px;
+            }
+            .btn {        
+                font-size: 15px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body style="background-color: rgb(9, 99, 196);">
+        <div class="login-form">
+            <form>
+                <h2 class="text-center">Gestor de cobranza</h2>       
+                <div class="form-group">
+                    <input id="inputUsuario" type="text" class="form-control" placeholder="Usuario" required="required">
+                </div>
+                <div class="form-group">
+                    <input id="inputContra" type="password" class="form-control" placeholder="Contraseña" required="required">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="chkadmin">
+                    <label class="form-check-label" for="chkadmin">Usuario administrador</label>
+                </div>
+                <div id="alerterror" class="alert alert-danger" style="margin-top: 10px;" role="alert" hidden>
+                    Credenciales incorrectas
+                </div>
+                <br>
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary btn-block" onclick="iniciarSesion()">Iniciar sesión</button>
+                </div>
+                <div class="clearfix">
+                    <a href="#" class="pull-right">¿Contraseña olvidada?</a>
+                </div>        
+            </form>
+        </div>
+    </body>
+</html>

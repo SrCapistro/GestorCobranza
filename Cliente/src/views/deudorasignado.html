@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/deudorasignado.js"></script>
+    <title>Panel cobrador - Info deudor</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="panelcobrador.html" style="font-size: 25px;">Gestor de cobranza</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="deudoresasignados.html">Deudores<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <a class="btn btn-outline-success my-2 my-sm-0" href="../index.html">Cerrar sesión</a>
+          </form>
+        </div>
+      </nav>
+      <h1 style="text-align:center; margin: 20px;">Información personal</h1>
+    <div class="info">
+        <form class="row g-3" style="margin: 20px;">
+            <div class="border rounded border-secundary col-md-12">
+                <div style="margin-left:20px ;">
+                    <div class="col-md-6">
+                        <br>
+                        <label style="font-weight:bold; font-size: 30px;">Datos</label>
+                    </div>
+                    <div class="col-md-3" style="margin-top:20px ;">
+                        <label for="inputNombre" class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" id="inputNombre" readonly>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="inputEmail" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="inputEmail" readonly>
+                      </div>
+                      <div class="col-md-3">
+                        <label for="inputNumero" class="form-label">Número de contacto</label>
+                        <input type="number" class="form-control" id="inputNumero" readonly>
+                      </div>
+                      <div class="col-12">
+                        <br>
+                        <label for="labelDeudaTotal" class="form-label" style="font-weight: bold;">Deuda total</label>
+                        <br>
+                        <label id="labelDeudaTotal" class="form-label"></label>
+                      </div>
+                      <div class="col-12">
+                          <br>
+                          <label for="labelDeudaActual" class="form-label" style="font-weight: bold;">Deuda actual</label>
+                          <br>
+                          <label id="labelDeudaActual" class="form-label"></label>
+                          <br>
+                          <br>
+                      </div>
+                </div>
+            </div>
+            <span  style="margin-top: 20px;" class="border rounded border-secundary col-md">
+                <div class="row g-3" style="margin: 20px;">
+                    <div class="col-12">
+                        <label style="font-weight:bold; font-size: 30px;">Dirección</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputColonia">Colonia</label>
+                        <input type="text" class="form-control" id="inputColonia" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCalle">Calle</label>
+                        <input type="text" class="form-control" id="inputCalle" readonly>
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputCiudad" class="form-label">Ciudad</label>
+                      <input type="text" class="form-control" id="inputCiudad" readonly>
+                    </div>
+                    <div class="col-md-2">
+                      <label for="inputZip" class="form-label">Código postal</label>
+                      <input type="text" class="form-control" id="inputZip" readonly>
+                    </div>
+                </div>
+            </span>
+            <div class="col-12">
+            </div>
+            <div class="col-12 border border-secundary rounded" style="margin-top: 10px;">
+                <div class="col-12" style="margin-top: 10px ;">
+                    <label style="font-weight:bold; font-size: 30px;">Pagos</label>
+                    <label id="labeldeuda" style="font-weight:bold; font-size: 20px; float: right;" hidden>LA DEUDA DEL USUARIO HA SIDO SALDADA</label>
+                </div>
+                <div class="data-section">
+                    <table id="tablapagos" class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Monto</th>
+                            <th scope="col">Fecha</th>
+                          </tr>
+                        </thead>
+                      </table>
+                      <button id="btnregistro" type="button" style="float: left; margin-bottom: 20px;" class="btn btn-success" data-toggle="modal" data-target="#dialogopago">Registrar pago</button>
+                </div>
+            </div>
+            <div class="modal fade" id="dialogopago" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar nuevo pago</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <label for="inputMonto">Ingresa el monto</label>
+                    <input type="number" class="form-control" id="inputMonto">
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="guardarRegistro()">Confirmar</button>
+                    <div id="alerterror" class="alert alert-danger" style="margin-top: 10px;" role="alert" hidden>
+                      Debes llenar el campo
+                   </div>
+                    <div id="alerterrorpago" class="alert alert-danger" style="margin-top: 10px;" role="alert" hidden>
+                      No se puede registrar el pago porque excede la cantidad de deuta actual del usuario
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div id="dialogdeuda" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Deuda saldada</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>La deuda de este usuario ha sido saldada por lo que no se pueden registrar más pagos</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Aceptar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</body>
+</html>
